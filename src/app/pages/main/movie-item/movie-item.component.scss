@@ -1,0 +1,69 @@
+@import "../../../styles/color-mixin.scss";
+
+.movie {
+  &__image {
+  }
+
+  &__img {
+    border-radius: 20px;
+    height: 340px;
+  }
+
+  &__items {
+    display: flex;
+    margin-top: 15px;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin-bottom: 3px;
+  }
+
+  &__rates {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+
+  &__certificate {
+    font-weight: 700;
+  }
+
+  &__genre {
+  }
+
+  &__session {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__date {
+    margin-bottom: 10px;
+  }
+
+  &__sessions {
+    display: flex;
+    width: 170px;
+    border: 1px solid #1a2232;
+    border-radius: 20px;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__time {
+    padding: 7px;
+    @include _orange;
+    border-radius: 20px;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__price {
+    margin-left: 15px;
+  }
+}

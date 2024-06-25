@@ -1,22 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { OutSideClickDirective } from '../../directives/outsideClick.directive';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+interface City {
+  value: string;
+  label: string;
+}
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, OutSideClickDirective, RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  public isDropdownOpened: boolean = false;
-
   public readonly logoImg = '../../../../assets/cinema-logo.png';
   public readonly locationImg = '../../../../assets/location.png';
-
-  public toggleChange(): void {
-    this.isDropdownOpened = !this.isDropdownOpened;
-  }
 }

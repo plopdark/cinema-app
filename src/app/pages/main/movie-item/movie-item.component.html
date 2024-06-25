@@ -1,0 +1,19 @@
+<div class="movie__image">
+  <img [src]="movie.image" alt="image" class="movie__img" />
+</div>
+<div class="movie__items">
+  <h2 class="movie__title">{{ movie.title }}</h2>
+  <div class="movie__rates">
+    <span class="movie__certificate">{{ movie.certificate }}+</span>
+    <p class="movie__genre">{{ movie.genre }}</p>
+  </div>
+  <div class="movie__session">
+    <h3 class="movie__date">Today</h3>
+    <div class="movie__sessions">
+      <div class="movie__time">
+        <p><span>12:30</span> - 14:37</p>
+      </div>
+      <p class="movie__price">20$</p>
+    </div>
+  </div>
+</div>

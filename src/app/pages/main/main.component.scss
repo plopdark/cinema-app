@@ -1,0 +1,16 @@
+@import "../../styles/color-mixin.scss";
+
+.main {
+  &__container {
+  }
+
+  &__movie {
+    @include _dark-blue;
+    width: 500px;
+    height: 340px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    gap: 20px;
+  }
+}

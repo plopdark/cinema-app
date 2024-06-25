@@ -2,21 +2,7 @@
   <div class="header__container">
     <div class="header__city">
       <img class="header__city-img" [src]="locationImg" alt="location" />
-      <div class="header__city-dropdown">
-        <div class="header__city-select" (click)="toggleChange()">
-          Select city
-        </div>
-        <div
-          class="header__city-items"
-          *ngIf="isDropdownOpened"
-          [appOutSideClick]="isDropdownOpened"
-          (outSideClick)="isDropdownOpened = false"
-        >
-          <div class="header__city-item">Kyiv, s.c. Ocean Plaza</div>
-          <div class="header__city-item">Lviv, s.c. Victoria Gardens</div>
-          <div class="header__city-item">Vinnytsia, s.c. Megamoll</div>
-        </div>
-      </div>
+      <p class="header__city-item">Vinnytsia, t.c. Megamoll</p>
     </div>
     <div class="header__image">
       <img [src]="logoImg" alt="logo" class="header__img" />

@@ -1,1 +1,11 @@
 <app-header></app-header>
+<main class="main">
+  <div class="main__container">
+    <div class="main__movie">
+      <app-movie-item
+        *ngFor="let movie of movieList"
+        [movie]="movie"
+      ></app-movie-item>
+    </div>
+  </div>
+</main>

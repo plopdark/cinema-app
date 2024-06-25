@@ -1,39 +1,36 @@
+@import "../../../styles/color-mixin.scss";
+
 .header {
-  background-color: #1a2232;
+  @include _dark-blue;
   height: 120px;
+  padding: 0 10px;
+  margin-bottom: 20px;
 
   &__container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
   }
 
   &__city {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    width: 33.3%;
   }
 
   &__city-img {
-    width: 50px;
-    height: 50px;
-  }
-
-  &__city-dropdown {
-  }
-
-  &__city-select {
-    cursor: pointer;
-  }
-
-  &__city-items {
+    width: 35px;
   }
 
   &__city-item {
-    cursor: pointer;
+    font-size: 20px;
   }
 
   &__image {
+    width: 33.3%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   &__img {
@@ -41,6 +38,8 @@
   }
 
   &__account {
+    padding: 10px;
+    border-radius: 10px;
   }
 
   &__button {
