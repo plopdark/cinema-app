@@ -1,15 +1,24 @@
 @import "../../../styles/color-mixin.scss";
 
 .movie {
+  @include _dark-blue;
+  width: 100%;
+  height: 340px;
+  display: flex;
+  border-radius: 20px;
+
   &__image {
+    margin-right: auto;
   }
 
   &__img {
     border-radius: 20px;
     height: 340px;
+    cursor: pointer;
   }
 
   &__items {
+    margin: 0 auto;
     display: flex;
     margin-top: 15px;
     align-items: center;
@@ -18,6 +27,8 @@
 
   &__title {
     margin-bottom: 3px;
+    cursor: pointer;
+    text-align: center;
   }
 
   &__rates {
@@ -51,19 +62,42 @@
     border-radius: 20px;
     align-items: center;
     cursor: pointer;
+    padding: 5px;
+    max-height: 220px;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  &__show {
+    background-color: #1a2232;
+    margin-bottom: 17px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 20px;
   }
 
   &__time {
-    padding: 7px;
     @include _orange;
+    font-weight: 700;
+    padding: 5px;
     border-radius: 20px;
-
-    span {
-      font-weight: 700;
-    }
+    width: 100px;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
   }
 
   &__price {
-    margin-left: 15px;
+    margin-left: 24px;
+  }
+}
+
+.shows {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 }

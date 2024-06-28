@@ -28,6 +28,15 @@ export class MoviesService {
         PeopleEnum.Dave_Bautista,
         PeopleEnum.Léa_Seydoux,
       ],
+      shows: [
+        '9:00 - 11:46',
+        '12:20 - 15:06',
+        '15:30 - 18:16',
+        '17:00 - 19:46',
+        '18:10 - 20:36',
+        '20:10- 22:56',
+      ],
+      price: 30,
     },
     {
       title: 'Furiosa: A Mad Max Saga',
@@ -49,6 +58,15 @@ export class MoviesService {
         PeopleEnum.Charlee_Fraser,
         PeopleEnum.Elsa_Pataky,
       ],
+      shows: [
+        '9:00 - 11:28',
+        '11:20 - 13:48',
+        '13:00 - 15:28',
+        '15:30 - 17:28',
+        '16:50 - 19:18',
+        '19:00 - 21:28',
+      ],
+      price: 15,
     },
     {
       title: 'Inside Out 2',

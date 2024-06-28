@@ -1,19 +1,30 @@
-<div class="movie__image">
-  <img [src]="movie.image" alt="image" class="movie__img" />
-</div>
-<div class="movie__items">
-  <h2 class="movie__title">{{ movie.title }}</h2>
-  <div class="movie__rates">
-    <span class="movie__certificate">{{ movie.certificate }}+</span>
-    <p class="movie__genre">{{ movie.genre }}</p>
+<div class="movie">
+  <div class="movie__image">
+    <img
+      [src]="movie.image"
+      alt="image"
+      class="movie__img"
+      [routerLink]="['/movie', movie.title]"
+    />
   </div>
-  <div class="movie__session">
-    <h3 class="movie__date">Today</h3>
-    <div class="movie__sessions">
-      <div class="movie__time">
-        <p><span>12:30</span> - 14:37</p>
+  <div class="movie__items">
+    <h2 class="movie__title" [routerLink]="['/movie', movie.title]">
+      {{ movie.title }}
+    </h2>
+    <div class="movie__rates">
+      <span class="movie__certificate">{{ movie.certificate }}+</span>
+      <p class="movie__genre">{{ movie.genre }}</p>
+    </div>
+    <div class="movie__session" [routerLink]="['/movie', movie.title]">
+      <h3 class="movie__date">Today</h3>
+      <div class="movie__sessions">
+        <div class="shows__container">
+          <div class="movie__show" *ngFor="let show of movie.shows">
+            <div class="movie__time">{{ show }}</div>
+            <span class="movie__price">{{ movie.price }}$</span>
+          </div>
+        </div>
       </div>
-      <p class="movie__price">20$</p>
     </div>
   </div>
 </div>

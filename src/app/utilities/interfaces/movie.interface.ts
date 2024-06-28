@@ -7,4 +7,6 @@ export interface MovieInterface {
   genre: string[];
   director: string[];
   cast: string[];
+  shows?: string[];
+  price?: number;
 }
