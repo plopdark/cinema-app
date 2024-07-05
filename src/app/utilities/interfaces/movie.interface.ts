@@ -1,6 +1,8 @@
 export interface MovieInterface {
   title: string;
   image: string;
+  trailer?: string;
+  quality?: string;
   desc: string;
   certificate: string;
   runtime: number;

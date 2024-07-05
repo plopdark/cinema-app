@@ -1,11 +1,14 @@
-@import "../../../styles/color-mixin.scss";
+@import "../../../styles/style-mixin.scss";
 
 .movie {
-  @include _dark-blue;
-  width: 100%;
-  height: 340px;
   display: flex;
+  flex-direction: column;
   border-radius: 20px;
+
+  &__container {
+    position: relative;
+    max-width: 250px;
+  }
 
   &__image {
     margin-right: auto;
@@ -13,91 +16,116 @@
 
   &__img {
     border-radius: 20px;
-    height: 340px;
+    height: 370px;
+    width: 250px;
     cursor: pointer;
   }
 
-  &__items {
-    margin: 0 auto;
-    display: flex;
-    margin-top: 15px;
-    align-items: center;
-    flex-direction: column;
+  &__quality {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    max-width: 50px;
+    background-color: #fff;
+    color: #000;
+    padding: 2px 4px;
+    border-radius: 6px;
+    font-weight: 700;
   }
 
   &__title {
-    margin-bottom: 3px;
-    cursor: pointer;
-    text-align: center;
-  }
-
-  &__rates {
     display: flex;
-    flex-direction: row;
-    gap: 5px;
-    margin-bottom: 10px;
+    justify-content: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+
+    &:hover {
+      color: #fd701e;
+    }
   }
 
-  &__certificate {
-    font-weight: 700;
+  &__desc {
+    opacity: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100% - 22px);
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    transition: all 0.2s;
+    gap: 10px;
+  }
+
+  &__desc:hover {
+    opacity: 100;
   }
 
   &__genre {
   }
 
-  &__session {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  &__certificate {
   }
 
-  &__date {
-    margin-bottom: 10px;
-  }
-
-  &__sessions {
-    display: flex;
-    width: 170px;
-    border: 1px solid #1a2232;
-    border-radius: 20px;
-    align-items: center;
+  &__trailer {
     cursor: pointer;
-    padding: 5px;
-    max-height: 220px;
-    overflow-y: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  &__show {
-    background-color: #1a2232;
-    margin-bottom: 17px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-radius: 20px;
-  }
-
-  &__time {
-    @include _orange;
-    font-weight: 700;
-    padding: 5px;
-    border-radius: 20px;
-    width: 100px;
-    white-space: nowrap;
+    width: 210px;
+    height: 40px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 20px;
+
+    &:hover {
+      background-color: #fff;
+      border: 1px solid #000;
+
+      .movie__link {
+        color: #000;
+      }
+
+      .play-button {
+        content: url("../../../../assets/play-button-black.png");
+      }
+    }
   }
 
-  &__price {
-    margin-left: 24px;
+  &__link {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &__sessionButton {
+    cursor: pointer;
+    @include _orange;
+    width: 210px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fd701e;
+    border-radius: 20px;
+
+    &:hover {
+      background-color: #853203;
+      border: 1px solid #853203;
+    }
+  }
+
+  &__sessionBtn {
+    text-decoration: none;
+    color: #fff;
   }
 }
 
-.shows {
-  &__container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
+.play-button {
+  width: 25px;
+  margin-right: 10px;
 }

@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieInterface } from '../../../utilities/interfaces/movie.interface';
 import { ActivatedRoute } from '@angular/router';
-import { MoviesService } from '../../services/movies.service';
+import { MoviesService } from '../../../shared/services/movies.service';
 
 @Component({
-  selector: 'app-movie-page',
+  selector: 'app-show',
   standalone: true,
   imports: [],
-  templateUrl: './movie-page.component.html',
-  styleUrl: './movie-page.component.scss',
+  templateUrl: './show.component.html',
+  styleUrl: './show.component.scss',
 })
-export class MoviePageComponent implements OnInit {
+export class ShowComponent implements OnInit {
   public movie?: MovieInterface;
 
   constructor(
@@ -20,6 +20,7 @@ export class MoviePageComponent implements OnInit {
 
   ngOnInit(): void {
     const title = this.route.snapshot.paramMap.get('title');
+
     if (title) {
       this.movie = this.movieService.getMovie().find((m) => m.title === title);
     }

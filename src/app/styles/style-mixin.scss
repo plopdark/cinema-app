@@ -1,0 +1,13 @@
+@mixin _orange {
+  background-color: #fd701e;
+}
+
+@mixin _black {
+  background-color: #000;
+}
+
+@mixin _container {
+  max-width: 1150px;
+  margin: 0 auto;
+  @content;
+}

@@ -1,29 +1,23 @@
 <div class="movie">
-  <div class="movie__image">
-    <img
-      [src]="movie.image"
-      alt="image"
-      class="movie__img"
-      [routerLink]="['/movie', movie.title]"
-    />
-  </div>
-  <div class="movie__items">
-    <h2 class="movie__title" [routerLink]="['/movie', movie.title]">
-      {{ movie.title }}
-    </h2>
-    <div class="movie__rates">
-      <span class="movie__certificate">{{ movie.certificate }}+</span>
-      <p class="movie__genre">{{ movie.genre }}</p>
+  <div class="movie__container">
+    <div class="movie__quality">{{ movie?.quality }}</div>
+    <div class="movie__image">
+      <img [src]="movie.image" alt="image" class="movie__img" />
     </div>
-    <div class="movie__session" [routerLink]="['/movie', movie.title]">
-      <h3 class="movie__date">Today</h3>
-      <div class="movie__sessions">
-        <div class="shows__container">
-          <div class="movie__show" *ngFor="let show of movie.shows">
-            <div class="movie__time">{{ show }}</div>
-            <span class="movie__price">{{ movie.price }}$</span>
-          </div>
+    <div class="movie__title">{{ movie?.title }}</div>
+    <div class="movie__desc">
+      <div class="movie__genre">{{ movie?.genre }}</div>
+      <div class="movie__certificate">{{ movie?.certificate }}</div>
+      <a [href]="movie?.trailer" target="_blank" class="movie__link">
+        <div class="movie__trailer">
+          <img [src]="playButton" alt="play" class="play-button" />
+          <p class="movie__link">Trailer</p>
         </div>
+      </a>
+      <div class="movie__sessionButton">
+        <a [routerLink]="['/movie', movie?.title]" class="movie__sessionBtn"
+          >Buy tickets</a
+        >
       </div>
     </div>
   </div>

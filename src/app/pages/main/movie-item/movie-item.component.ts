@@ -13,5 +13,8 @@ import { MoviesService } from '../../../shared/services/movies.service';
 })
 export class MovieItemComponent {
   @Input() movie!: MovieInterface;
+
+  public readonly playButton = '../../../../assets/play-button-white.png';
+
   constructor(private movieService: MoviesService) {}
 }

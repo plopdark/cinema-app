@@ -1,12 +1,13 @@
-@import "../../../styles/color-mixin.scss";
+@import "../../../styles/style-mixin.scss";
 
 .header {
-  @include _dark-blue;
+  @include _black;
   height: 120px;
   padding: 0 10px;
   margin-bottom: 20px;
 
   &__container {
+    @include _container;
     display: flex;
     flex-direction: row;
     align-items: center;
