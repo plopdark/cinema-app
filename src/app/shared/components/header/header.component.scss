@@ -5,6 +5,10 @@
   height: 120px;
   padding: 0 10px;
   margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  background-color: rgba(0, 0, 0, 0.75);
 
   &__container {
     @include _container;

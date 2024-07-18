@@ -1,1 +1,101 @@
-<div>{{ movie?.shows }}</div>
+<app-header></app-header>
+<div class="show">
+  <div class="show__container">
+    <div class="show__left">
+      <div class="show__info">
+        <div class="show__image">
+          <img [src]="movie?.image" alt="" class="show__img" />
+        </div>
+        <div class="show__info-rigt">
+          <div class="show__title">{{ movie?.title }}</div>
+          <div class="show__row">
+            <div class="show__quality">{{ movie?.quality }}</div>
+            <div class="show__certificate">{{ movie?.certificate }}</div>
+          </div>
+          <div class="show__back-button">
+            <div [routerLink]="['/movie', movie?.title]" class="show__back-btn">
+              <img [src]="arrowLeft" alt="arrow" class="show__back-img" />
+              Choose another session
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="show__hall">
+        <div class="show__hall-head">Screen</div>
+        <div class="show__hall-body">
+          <div class="show__hall-seats">
+            <div
+              class="show__hall-seat"
+              *ngFor="let seat of seatsArr"
+              (click)="toggleSeat(seat)"
+              [ngClass]="{ 'selected-seat': isSelectedSeat(seat) }"
+            >
+              <img [src]="seatImage" alt="seat" />
+            </div>
+          </div>
+          <div class="show__hall-rows">
+            <div class="show__hall-row" *ngFor="let row of rowsCountArr">
+              {{ row }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="show__right">
+      <div class="show__tickets">
+        <h2 class="show__tickets-title">Buy tickets</h2>
+        <div class="show__tickets-info">
+          <span class="show__tickets-time">{{ session }}</span>
+          <p class="show__tickets-hall">
+            Hall №{{ movie?.hall }}, {{ movie?.quality }}
+          </p>
+        </div>
+        <div class="show__tickets-chosen">
+          <p *ngIf="chosenPlaces.length === 0">Choose at least one ticket</p>
+          <div
+            class="show__tickets-chosen-block"
+            *ngIf="chosenPlaces.length > 0"
+          >
+            <div
+              class="show__tickets-chosen-item"
+              *ngFor="let seatId of chosenPlaces"
+            >
+              <div class="show__tickets-chosen-row">
+                <span class="chosen-big">{{ calculatedRow(seatId) }}</span>
+                <span class="chosen-small">Row</span>
+              </div>
+              <div class="show__tickets-chosen-place">
+                <span class="chosen-big">{{ calculatedPlace(seatId) }}</span>
+                <span class="chosen-small">Place</span>
+              </div>
+              <div class="show__tickets-chosen-price">
+                <span class="chosen-big">{{ movie?.price }}$</span>
+              </div>
+              <div class="show__tickets-chosen-button">
+                <button
+                  class="show__tickets-chosen-btn"
+                  (click)="deleteSeat(seatId)"
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="show__tickets-total">
+        <div class="show__tickets-total-tickets">
+          <span class="total-big">{{ chosenPlaces.length }}</span>
+          <span class="total-small">tickets</span>
+        </div>
+        <div class="show__tickets-total-price">
+          <span class="total-big">{{ totalPrice }}</span>
+          <span class="total-small">dollars</span>
+        </div>
+        <div class="show__tickets-total-button">
+          <button class="show__tickets-total-btn">Buy tickets</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

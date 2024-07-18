@@ -1,0 +1,14 @@
+.movie__param {
+  display: flex;
+  flex-direction: row;
+
+  p {
+    color: #828282;
+    width: 90px;
+    flex-shrink: 0;
+  }
+
+  span {
+    font-weight: 700;
+  }
+}

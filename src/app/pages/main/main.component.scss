@@ -1,6 +1,8 @@
 @import "../../styles/style-mixin.scss";
 
 .main {
+  padding-bottom: 10px;
+
   &__container {
     @include _container;
   }

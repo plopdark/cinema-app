@@ -16,4 +16,5 @@ interface City {
 export class HeaderComponent {
   public readonly logoImg = '../../../../assets/cinema-logo.png';
   public readonly locationImg = '../../../../assets/location.png';
+  public readonly userIcon = '../../../../assets/user-icon.png';
 }
