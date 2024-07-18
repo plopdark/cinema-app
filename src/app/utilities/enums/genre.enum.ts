@@ -1,0 +1,15 @@
+export enum GenreEnum {
+  Action = 'Action',
+  Adventure = 'Adventure',
+  Drama = 'Drama',
+  Comedy = 'Comedy',
+  SciFi = 'Sci-Fi',
+  Animation = 'Animation',
+  Crime = 'Crime',
+  Thriller = 'Thriller',
+  War = 'War',
+  Horror = 'Horror',
+  Musical = 'Musical',
+  Fantasy = 'Fantasy',
+  Mystery = 'Mystery',
+}

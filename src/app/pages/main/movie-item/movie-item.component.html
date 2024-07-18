@@ -1,0 +1,21 @@
+<div class="movie">
+  <div class="movie__container">
+    <div class="movie__quality">{{ movie?.quality || "N/A" }}</div>
+    <div class="movie__image">
+      <img [src]="movie.image" alt="image" class="movie__img" />
+    </div>
+    <div class="movie__title" [routerLink]="['/movie', movie?.title]">
+      {{ movie?.title }}
+    </div>
+    <div class="movie__desc">
+      <div class="movie__genre">{{ movie?.genre }}</div>
+      <div class="movie__certificate">{{ movie?.certificate }}</div>
+      <app-trailer-button [value]="movie?.trailer"></app-trailer-button>
+      <div class="movie__sessionButton">
+        <a [routerLink]="['/movie', movie?.title]" class="movie__sessionBtn"
+          >Buy tickets</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

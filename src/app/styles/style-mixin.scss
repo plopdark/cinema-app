@@ -1,0 +1,28 @@
+@mixin _orange {
+  background-color: #fd701e;
+}
+
+@mixin _black {
+  background-color: #000;
+}
+
+@mixin _container {
+  max-width: 1220px;
+  margin: 0 auto;
+  @content;
+}
+
+@mixin _quality {
+  max-width: 50px;
+  background-color: #fff;
+  color: #000;
+  padding: 2px 4px;
+  border-radius: 6px;
+  font-weight: 700;
+  @content;
+}
+
+@mixin _certificate {
+  font-weight: 700;
+  @content;
+}

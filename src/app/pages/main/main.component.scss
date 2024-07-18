@@ -1,0 +1,15 @@
+@import "../../styles/style-mixin.scss";
+
+.main {
+  padding-bottom: 10px;
+
+  &__container {
+    @include _container;
+  }
+
+  &__movie {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}

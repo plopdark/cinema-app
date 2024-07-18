@@ -1,0 +1,55 @@
+@import "../../../styles/style-mixin.scss";
+
+.header {
+  @include _black;
+  height: 120px;
+  padding: 0 10px;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  background-color: rgba(0, 0, 0, 0.75);
+
+  &__container {
+    @include _container;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__city {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 33.3%;
+  }
+
+  &__city-img {
+    width: 35px;
+  }
+
+  &__city-item {
+    font-size: 20px;
+  }
+
+  &__image {
+    width: 33.3%;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+  }
+
+  &__img {
+    width: 100px;
+  }
+
+  &__account {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  &__button {
+    text-decoration: none;
+    color: #fff;
+  }
+}

@@ -1,0 +1,62 @@
+<app-header></app-header>
+<div class="movie">
+  <div class="movie__container">
+    <div class="movie__back-button">
+      <div routerLink="" class="movie__back-btn">
+        <img [src]="arrowLeft" alt="arrow" class="movie__back-img" />
+        Choose another movie
+      </div>
+    </div>
+    <div class="movie__elements">
+      <div class="movie__left">
+        <div class="movie__image">
+          <img [src]="movie?.image" alt="" class="movie__img" />
+        </div>
+        <app-trailer-button [value]="movie?.trailer"></app-trailer-button>
+      </div>
+      <div class="movie__info">
+        <div class="movie__title">
+          <h2>{{ movie?.title }}</h2>
+        </div>
+        <div class="movie__genres">{{ movie?.genre?.join(", ") || "N/A" }}</div>
+        <div class="movie__row">
+          <div class="movie__quality">{{ movie?.quality || "N/A" }}</div>
+          <div class="movie__certificate">
+            {{ movie?.certificate || "N/A" }}
+          </div>
+        </div>
+        <div class="movie__params">
+          <app-movie-params
+            [param]="'Runtime'"
+            [value]="movie?.runtime || 'N/A'"
+          ></app-movie-params>
+          <app-movie-params
+            [param]="'Writer'"
+            [value]="movie?.writer?.join(', ') || 'N/A'"
+          ></app-movie-params>
+          <app-movie-params
+            [param]="'Director'"
+            [value]="movie?.director?.join(', ') || 'N/A'"
+          ></app-movie-params>
+          <app-movie-params
+            [param]="'Cast'"
+            [value]="movie?.cast?.join(', ') || 'N/A'"
+          ></app-movie-params>
+        </div>
+        <div class="movie__desc">{{ movie?.desc }}</div>
+      </div>
+      <div class="movie__sessions">
+        <div class="movie__sessions-title">Choose sessions</div>
+        <div class="movie__sessions-list">
+          <div class="movie__sessions-item" *ngFor="let show of filteredShows">
+            <a
+              [routerLink]="['/movie', movie?.title, show]"
+              class="movie__sessions-button"
+              >{{ show }}</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

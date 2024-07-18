@@ -1,0 +1,281 @@
+@import "../../../styles/style-mixin.scss";
+
+.show {
+  padding-bottom: 10px;
+  &__container {
+    @include _container;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    &-rigt {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__img {
+    width: 150px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__quality {
+    @include _quality;
+  }
+
+  &__certificate {
+    @include _certificate;
+  }
+
+  &__back {
+    &-button {
+      opacity: 0.5;
+      border: 1px solid #fff;
+      border-radius: 20px;
+      cursor: pointer;
+      padding: 10px;
+      margin-top: auto;
+    }
+
+    &-img {
+      width: 19px;
+    }
+
+    &-btn {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+    }
+  }
+
+  &__hall {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    &-head {
+      background-image: url("../../../../assets/screen.png"),
+        url("../../../../assets/screen-line.png");
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: 500px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    &-body {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &-seats {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 549px;
+    }
+
+    &-seat {
+      img {
+        cursor: pointer;
+        width: 50px;
+      }
+
+      &:hover {
+        img {
+          content: url("../../../../assets/seat-orange.png");
+        }
+      }
+    }
+
+    &-rows {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    &-row {
+      font-size: 20px;
+      font-weight: 700;
+      opacity: 0.5;
+    }
+  }
+
+  &__right {
+    width: 460px;
+  }
+
+  &__tickets {
+    &-title {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+      align-items: end;
+      margin-bottom: 30px;
+    }
+
+    &-time {
+      font-size: 20px;
+      font-weight: 500;
+      color: #fd701e;
+    }
+
+    &-chosen {
+      p {
+        opacity: 0.5;
+      }
+
+      &-block {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      &-item {
+        align-items: center;
+        width: 100%;
+        background-color: #fff;
+        color: #000;
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+      &-row {
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+      }
+
+      &-place {
+        display: flex;
+        gap: 3px;
+        align-items: center;
+      }
+
+      &-price {
+        margin-left: auto;
+      }
+
+      &-button {
+        margin-left: 85px;
+      }
+
+      &-btn {
+        cursor: pointer;
+        background-color: #fbe7e7;
+        border: 1px solid #fbe7e7;
+        color: #da0b0b;
+        font-size: 14px;
+        padding: 4px;
+        width: 75px;
+        border-radius: 10px;
+
+        &:hover {
+          border: 1px solid #ff0000;
+          background-color: #fff;
+        }
+      }
+    }
+
+    &-total {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      &-tickets {
+        display: flex;
+        gap: 2px;
+        align-items: first baseline;
+        margin-right: 30px;
+      }
+
+      &-price {
+        display: flex;
+        gap: 2px;
+        align-items: first baseline;
+      }
+
+      &-button {
+        margin-left: auto;
+      }
+
+      &-btn {
+        width: 230px;
+        padding: 18px;
+        color: #fff;
+        background-color: #fd701e;
+        border-radius: 20px;
+        border: 1px solid #fd701e;
+        cursor: pointer;
+
+        &:hover {
+          transition-duration: 0.15s;
+          background-color: #853203;
+          border: 1px solid #853203;
+        }
+      }
+    }
+  }
+}
+
+.chosen {
+  &-big {
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  &-small {
+    opacity: 0.5;
+    font-weight: 500;
+  }
+}
+
+.total {
+  &-big {
+    font-weight: 700;
+    font-size: 26px;
+  }
+}
+
+.orange-seat {
+  content: url("../../../../assets/seat-orange.png");
+}
+
+.selected-seat {
+  img {
+    content: url("../../../../assets/seat-orange.png");
+  }
+}

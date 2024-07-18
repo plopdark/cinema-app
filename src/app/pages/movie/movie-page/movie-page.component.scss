@@ -1,0 +1,135 @@
+@import "../../../styles/style-mixin.scss";
+
+.movie {
+  &__container {
+    @include _container;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__back {
+    &-button {
+      opacity: 0.5;
+      border: 1px solid #fff;
+      border-radius: 20px;
+      cursor: pointer;
+      padding: 7px;
+      display: flex;
+      width: 220px;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    &-img {
+      width: 19px;
+    }
+
+    &-btn {
+      display: flex;
+      flex-direction: row;
+      background-color: inherit;
+      color: #fff;
+      gap: 4px;
+      border: none;
+    }
+  }
+
+  &__elements {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__image {
+  }
+
+  &__img {
+    width: 270px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__title {
+    font-size: 20px;
+  }
+
+  &__genres {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__quality {
+    @include _quality;
+  }
+
+  &__certificate {
+    @include _certificate;
+  }
+
+  &__params {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__desc {
+    font-size: 18px;
+  }
+
+  &__sessions {
+    min-width: 380px;
+    color: #000;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+
+    &-title {
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      width: 100%;
+      overflow: hidden;
+      gap: 10px;
+    }
+
+    &-item {
+      cursor: pointer;
+      background-color: #f0f0f0;
+      color: #000;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 5px 7px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+    }
+
+    &-button {
+      color: #000;
+      text-decoration: none;
+    }
+  }
+}
